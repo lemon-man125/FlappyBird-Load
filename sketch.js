@@ -34,7 +34,7 @@ function preload() {
 
 function setup() {
   createCanvas(600, 400).parent("canvas-wrapper");
-  background(0);
+  background(0, 165, 255);
   noLoop();
   tf.setBackend("cpu");
   angleMode(DEGREES);

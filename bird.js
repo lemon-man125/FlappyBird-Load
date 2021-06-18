@@ -31,7 +31,7 @@ class Bird {
       if (this.highlight) {
         fill(0, 0, 255, 100);
       } else {
-        fill(255, 100);
+        fill(230, 245, 37, 100);
       }
       circle(this.pos.x, this.pos.y, this.r * 2);
       pop();
@@ -63,9 +63,23 @@ class Bird {
         1
       );
       // top of closest pipe opening
-      inputs[1] = map(closest.top, 0, height, -1, 1);
+      //inputs[1] = map(closest.top, 0, height, -1, 1);
+      inputs[1] = map(
+        abs(this.pos.y - this.r - closest.top),
+        0,
+        closest.top,
+        -1,
+        1
+      );
       // bottom of closest pipe opening
-      inputs[2] = map(height - closest.bottom, 0, height, -1, 1);
+      //inputs[2] = map(height - closest.bottom, 0, height, -1, 1);
+      inputs[2] = map(
+        abs(this.pos.y + this.r - (height - closest.bottom)),
+        0,
+        height - closest.bottom,
+        -1,
+        1
+      );
       // bird's y position
       inputs[3] = map(this.pos.y, 0, height, -1, 1);
       // bird's y velocity

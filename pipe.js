@@ -9,7 +9,7 @@ class Pipe {
     this.w = 80;
   }
 
-  show(bestBird) {
+  show() {
     if (imageLoad) {
       push();
       translate(this.pos.x + this.w / 2, this.top / 2);
@@ -25,13 +25,10 @@ class Pipe {
         this.bottom
       );
     } else {
-      fill(200);
+      fill(0, 127, 0);
       noStroke();
       rect(this.pos.x, 0, this.w, this.top);
       rect(this.pos.x, this.pos.y - this.bottom, this.w, this.bottom);
-    }
-    if (bestBird) {
-      print("SHOWN!");
     }
   }
 
