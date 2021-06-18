@@ -48,7 +48,6 @@ function setup() {
     const birdBrain = NeuroEvolution.load(brain);
     bird = new Bird();
     bird.brain = birdBrain.copy();
-    bird.highlight = true;
     loop();
   });
   // Access the interface elements
@@ -64,7 +63,7 @@ function keyPressed() {
 }
 
 function draw() {
-  background(0);
+  background(0, 165, 255);
 
   if (FIXED_TIMESTEPS) {
     timeSteps = speedSlider.value();
